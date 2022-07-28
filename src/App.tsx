@@ -1,9 +1,25 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { AppRouter } from './Routes';
+import { ThemeProvider } from 'styled-components';
 
 function App() {
-  return <div className='App'>TodoList</div>;
+  return (
+    <div className='App'>
+      <ThemeProvider
+        theme={{
+          palette: {
+            black: '#282828',
+            gray: '#949494',
+            white: '#FFFFFF',
+          },
+        }}
+      >
+        <AppRouter />
+      </ThemeProvider>
+    </div>
+  );
 }
 
 export default App;
