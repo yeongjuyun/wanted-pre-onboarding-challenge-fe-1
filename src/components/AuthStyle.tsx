@@ -11,6 +11,10 @@ export const Container = styled.div`
   box-sizing: border-box;
 `;
 
+export const Form = styled.form`
+  width: 100%;
+`;
+
 export const InputDiv = styled.div`
   width: 100%;
   margin-top: 20px;
@@ -20,6 +24,11 @@ export const MainTitle = styled.div`
   font-size: 20px;
   font-weight: 600;
   text-align: center;
+`;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 export const Label = styled.label`
@@ -33,11 +42,19 @@ export const Label = styled.label`
   }
 `;
 
-export const Input = styled.input`
+export const ValidateText = styled.span`
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: auto;
+  color: red;
+`;
+
+export const Input = styled.input<{ error: boolean }>`
   width: 100%;
   height: 48px;
   font-size: 16px;
-  border: 1px solid rgb(141 146 159);
+  border: ${(props) =>
+    props.error ? '1px solid red' : '1px solid rgb(141 146 159)'};
   border-radius: 5px;
   padding: 0 12px;
   margin-top: 5px;
@@ -88,7 +105,9 @@ export const ButtonLink = styled.button`
   outline: 0;
   text-decoration-line: underline;
   background-color: transparent;
-  margin-left: auto;
+  /* margin-left: auto; */
+  float: right;
+  margin-bottom: 10px;
   margin-top: 5px;
   cursor: pointer;
 
@@ -106,7 +125,8 @@ export const SignupDiv = styled.div`
   }
   button {
     font-size: 16px;
-    margin-left: 0;
+    /* margin-left: 0; */
     margin-top: 0;
+    margin-bottom: 0;
   }
 `;

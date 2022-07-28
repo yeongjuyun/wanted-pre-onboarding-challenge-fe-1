@@ -140,9 +140,7 @@ Button.defaultProps = {
   fullWidth: false,
   rounding: false,
   outline: false,
-  onClick: () => {
-    console.log('click');
-  },
+  onClick: () => null,
   className: '',
   type: 'button',
   disabled: false,
