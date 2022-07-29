@@ -26,11 +26,6 @@ export const MainTitle = styled.div`
   text-align: center;
 `;
 
-export const TitleContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-`;
-
 export const Label = styled.label`
   font-size: 16px;
   font-weight: 600;

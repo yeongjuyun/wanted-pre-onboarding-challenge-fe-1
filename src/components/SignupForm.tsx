@@ -63,12 +63,12 @@ export default function SignupForm() {
       <AuthStyle.Form>
         <AuthStyle.MainTitle>회원가입</AuthStyle.MainTitle>
         <AuthStyle.InputDiv>
-          <AuthStyle.TitleContainer>
-            <AuthStyle.Label htmlFor='inputEmail'>이메일</AuthStyle.Label>
+          <AuthStyle.Label htmlFor='inputEmail'>
+            이메일
             <AuthStyle.ValidateText>
               {emailError && '유효하지 않은 이메일 주소입니다.'}
             </AuthStyle.ValidateText>
-          </AuthStyle.TitleContainer>
+          </AuthStyle.Label>
           <AuthStyle.Input
             type='text'
             id='inputEmail'
@@ -79,12 +79,12 @@ export default function SignupForm() {
           />
         </AuthStyle.InputDiv>
         <AuthStyle.InputDiv>
-          <AuthStyle.TitleContainer>
-            <AuthStyle.Label htmlFor='inputPassword'>비밀번호</AuthStyle.Label>
+          <AuthStyle.Label htmlFor='inputPassword'>
+            비밀번호
             <AuthStyle.ValidateText>
               {passwordError && '유효하지 않은 비밀번호입니다.'}
             </AuthStyle.ValidateText>
-          </AuthStyle.TitleContainer>
+          </AuthStyle.Label>
           <AuthStyle.Input
             type='password'
             id='inputPassword'

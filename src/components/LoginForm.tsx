@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from './Button';
 import * as imgs from '../imgs';
@@ -56,25 +56,34 @@ export default function LoginForm() {
       password: passwordInput.current!.value,
     };
     try {
-      await axios.post('/users/login', data);
-      console.log('로그인완료', data);
-      navigate('/');
+      const res = await axios.post('/users/login', data);
+      localStorage.setItem('token', res.data.token);
+      console.log(res.data.message);
+      navigate('/memo');
     } catch (error) {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      console.log('이미 로그인되어 있습니다.');
+      navigate('/memo');
+    }
+  }, []);
 
   return (
     <AuthStyle.Container>
       <AuthStyle.Form>
         <AuthStyle.MainTitle>로그인</AuthStyle.MainTitle>
         <AuthStyle.InputDiv>
-          <AuthStyle.TitleContainer>
-            <AuthStyle.Label htmlFor='inputEmail'>이메일</AuthStyle.Label>
+          <AuthStyle.Label htmlFor='inputEmail'>
+            이메일
             <AuthStyle.ValidateText>
               {emailError && '유효하지 않은 이메일 주소입니다.'}
             </AuthStyle.ValidateText>
-          </AuthStyle.TitleContainer>
+          </AuthStyle.Label>
           <AuthStyle.Input
             type='text'
             id='inputEmail'
@@ -85,13 +94,12 @@ export default function LoginForm() {
           />
         </AuthStyle.InputDiv>
         <AuthStyle.InputDiv>
-          <AuthStyle.TitleContainer>
-            <AuthStyle.Label htmlFor='inputPassword'>비밀번호</AuthStyle.Label>
-            <AuthStyle.ValidateText></AuthStyle.ValidateText>
+          <AuthStyle.Label htmlFor='inputPassword'>
+            비밀번호
             <AuthStyle.ValidateText>
               {passwordError && '유효하지 않은 비밀번호입니다.'}
             </AuthStyle.ValidateText>
-          </AuthStyle.TitleContainer>
+          </AuthStyle.Label>
           <AuthStyle.Input
             type='password'
             id='inputPassword'
