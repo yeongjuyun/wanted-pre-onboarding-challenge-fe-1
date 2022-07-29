@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { AppRouter } from './Routes';
+import { AppRouter } from './Router';
 import { ThemeProvider } from 'styled-components';
 
 function App() {
