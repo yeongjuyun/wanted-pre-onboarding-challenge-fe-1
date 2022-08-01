@@ -1,8 +1,8 @@
 import React, { useState, useRef } from 'react';
-import * as imgs from '../imgs';
+import * as imgs from '../../imgs';
 import * as AuthStyle from './AuthStyle';
-import Button from './Button';
-import { regEmail } from '../utils/validation';
+import Button from '../Button';
+import { regEmail } from '../../utils/validation';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 

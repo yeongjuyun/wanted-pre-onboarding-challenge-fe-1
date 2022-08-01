@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ButtonLink } from './AuthStyle';
+import { ButtonLink } from './Login/AuthStyle';
 import { useNavigate } from 'react-router-dom';
 
 const Contianier = styled.nav`

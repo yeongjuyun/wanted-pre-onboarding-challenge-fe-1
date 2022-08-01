@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from './Button';
-import * as imgs from '../imgs';
+import Button from '../Button';
+import * as imgs from '../../imgs';
 import * as AuthStyle from './AuthStyle';
-import { regEmail } from '../utils/validation';
+import { regEmail } from '../../utils/validation';
 import axios from 'axios';
 
 export default function LoginForm() {
